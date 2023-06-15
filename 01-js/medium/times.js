@@ -8,5 +8,26 @@ Hint - use Date class exposed in JS
 */
 
 function calculateTime(n) {
-    return 0.01;
+
+    function sum(n) {
+        ans = 0
+        for (let i = 1; i <= n; i++) {
+            ans += i
+
+        }
+        return ans
+    }
+    const obj1 = new Date();
+    const t1 = obj1.getSeconds()
+    let res = sum(n)
+    const obj2 = new Date();
+    const t2 = obj2.getSeconds()
+
+    console.log(t2, t1)
+
+
+
+    return (t2 - t1);
 }
+
+console.log(calculateTime(1000000000))

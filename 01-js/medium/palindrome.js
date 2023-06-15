@@ -7,7 +7,19 @@
 */
 
 function isPalindrome(str) {
+  str = str.replace(/[^\w]/g, '').toLowerCase();
+  let len = Math.floor(str.length / 2)
+
+  let lenOfStr = str.length - 1
+
+  for (let i = 0; i < len; i++) {
+    if (str[i] != str[lenOfStr - i]) {
+      return false
+    }
+  }
+
   return true;
 }
 
+console.log(isPalindrome("asdaAdsa?"))
 module.exports = isPalindrome;
