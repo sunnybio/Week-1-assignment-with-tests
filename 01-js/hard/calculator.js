@@ -17,6 +17,63 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+  constructor() {
+    this.result = 0
+
+  }
+
+  add(num) {
+    this.result += num
+  }
+  subtract(num) {
+    this.result = this.result - num
+  }
+  multiply(num) {
+    this.result *= num
+  }
+  divide(num) {
+    if (num == 0) {
+      throw new Error("divide by zero");
+
+    }
+
+    this.result = this.result / num
+  }
+  clear() {
+    this.result = 0
+  }
+  getResult() {
+    return this.result
+  }
+  calculate(exp) {
+    exp = exp.replace(/[ ]/g, "")
+    if (exp.includes("/0")) {
+      throw new Error("")
+    }
+
+
+    let res = eval(exp)
+
+    this.result = res
+
+
+
+
+  }
+}
+
+
+// const calc = new Calculator();
+// // calc.divide(0)
+// console.log(calc.calculate("2 + 3 / 0"))
+
+
+// // calc.add(5)
+// // calc.multiply(4)
+// // calc.substract(5)
+// // console.log(calc.getResult())
+
+
 
 module.exports = Calculator;
